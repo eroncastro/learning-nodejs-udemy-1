@@ -1,5 +1,5 @@
 /*
-  Serialize: translating an object into a format that can stored of transferred.
+  Serialize: translating an object into a format that can be stored of transferred.
   Examples: JSON, CSV, XML. Deserialize is the opposite.
 */
 
