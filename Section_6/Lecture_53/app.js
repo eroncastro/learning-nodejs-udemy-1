@@ -8,17 +8,20 @@
 */
 
 var fs = require('fs');
+var zlib = require('zlib');
 
 /*
   highWaterMark is the buffer size. In order words, how big we want
   each chunk to be.
 */
-var readable = fs.createReadStream(
-  `${__dirname}/greet.txt`, { encoding: 'utf8', highWaterMark: 1024 });
+var readable = fs.createReadStream(`${__dirname}/greet.txt`);
 
 var writable = fs.createWriteStream(`${__dirname}/greetcopy.txt`);
 
-readable.on('data', function(chunk) {
-  console.log(chunk.length);
-  writable.write(chunk);
-});
+var compressed = fs.createWriteStream(`${__dirname}/greet.txt.gz`);
+
+var gzip = zlib.createGzip();
+
+readable.pipe(writable);
+
+readable.pipe(gzip).pipe(compressed);
