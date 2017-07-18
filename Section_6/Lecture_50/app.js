@@ -1,4 +1,4 @@
-var fs = require('fs');
+ var fs = require('fs');
 
 var greet = fs.readFileSync(`${__dirname}/greet.txt`, 'utf8');
 console.log(greet);
@@ -14,7 +14,7 @@ fs.readFile(`${__dirname}/greet.txt`, function(err, data) {
 });
 
 fs.readFile(`${__dirname}/greet.txt`, 'utf8', function(err, data) {
-  if (!err) console.log(data.toString());
+  if (!err) console.log(data);
 });
 
 
