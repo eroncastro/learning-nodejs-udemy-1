@@ -1,0 +1,14 @@
+{
+  "name": "lecture69",
+  "version": "1.0.0",
+  "description": "lecture69 test app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.18.1"
+  }
+}
